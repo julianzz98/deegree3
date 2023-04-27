@@ -82,7 +82,7 @@
         <plugin>
           <groupId>org.jvnet.jaxb2.maven2</groupId>
           <artifactId>maven-jaxb2-plugin</artifactId>
-          <version>0.15.1</version>
+          <version>0.15.2</version>
           <executions>
             <execution>
               <goals>
@@ -417,7 +417,7 @@
       <dependency>
         <groupId>com.sun.xml.bind</groupId>
         <artifactId>jaxb-impl</artifactId>
-        <version>2.3.3</version>
+        <version>2.3.7</version>
         <scope>runtime</scope>
       </dependency>
       <!-- JAX-WS 2.3 (Jakarta EE 8) -->
@@ -497,6 +497,12 @@
         <version>${jsonpath.version}</version>
         <scope>test</scope>
       </dependency>
+      <dependency>
+        <groupId>com.mpobjects.jasperreports.font</groupId>
+        <artifactId>jasperreports-fonts-liberation</artifactId>
+        <version>2.1.2</version>
+        <scope>test</scope>
+      </dependency>
       <!-- apache commons -->
       <dependency>
         <groupId>commons-io</groupId>
@@ -537,7 +543,7 @@
       <dependency>
         <groupId>commons-fileupload</groupId>
         <artifactId>commons-fileupload</artifactId>
-        <version>1.4</version>
+        <version>1.5</version>
       </dependency>
       <dependency>
         <groupId>org.apache.httpcomponents</groupId>
@@ -553,12 +559,12 @@
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-pool2</artifactId>
-        <version>2.7.0</version>
+        <version>2.11.1</version>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-dbcp2</artifactId>
-        <version>2.7.0</version>
+        <version>2.9.0</version>
         <exclusions>
           <exclusion>
             <groupId>commons-logging</groupId>
@@ -680,15 +686,9 @@
       </dependency>
       <!-- XML -->
       <dependency>
-        <groupId>org.codehaus.woodstox</groupId>
-        <artifactId>woodstox-core-lgpl</artifactId>
-        <version>4.2.0</version>
-        <exclusions>
-          <exclusion>
-            <groupId>javax.xml.stream</groupId>
-            <artifactId>stax-api</artifactId>
-          </exclusion>
-        </exclusions>
+        <groupId>com.fasterxml.woodstox</groupId>
+        <artifactId>woodstox-core</artifactId>
+        <version>5.1.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.ws.commons.axiom</groupId>
@@ -804,9 +804,14 @@
         <version>2.5.1</version>
       </dependency>
       <dependency>
+        <groupId>net.postgis</groupId>
+        <artifactId>postgis-geometry</artifactId>
+        <version>2.5.1</version>
+      </dependency>
+      <dependency>
         <groupId>org.postgresql</groupId>
         <artifactId>postgresql</artifactId>
-        <version>42.4.3</version>
+        <version>42.5.2</version>
       </dependency>
       <!-- Oracle (Offical provided driver from repo1.maven.org) -->
       <dependency>
@@ -1042,13 +1047,13 @@
         <version>1.0-deegreeversion</version>
       </dependency>
       <dependency>
-        <groupId>net.sf.ehcache</groupId>
-        <artifactId>ehcache-core</artifactId>
-        <version>2.6.11</version>
+        <groupId>org.ehcache</groupId>
+        <artifactId>ehcache</artifactId>
+        <version>3.10.8</version>
         <exclusions>
           <exclusion>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -1196,12 +1201,12 @@
     <oracle.version>19.9.0.0</oracle.version>
     <log4j.version>2.17.2</log4j.version>
     <slf4j.version>1.7.36</slf4j.version>
-    <spring-boot.version>2.5.12</spring-boot.version>
-    <spring-batch.version>4.3.5</spring-batch.version>
-    <spring-framework.version>5.3.18</spring-framework.version>
+    <spring-boot.version>2.7.10</spring-boot.version>
+    <spring-batch.version>4.3.8</spring-batch.version>
+    <spring-framework.version>5.3.26</spring-framework.version>
     <batik.version>1.14</batik.version>
     <axoim.version>1.2.22</axoim.version>
-    <jsonpath.version>2.4.0</jsonpath.version>
+    <jsonpath.version>2.7.0</jsonpath.version>
   </properties>
 
   <modules>
