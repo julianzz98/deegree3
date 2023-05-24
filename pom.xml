@@ -137,7 +137,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0-M7</version>
+          <version>3.0.0</version>
           <configuration>
             <!-- Travis build workaround -->
             <argLine>-Djava.awt.headless=true -Xms1024m -Xmx2048m --illegal-access=permit
@@ -154,7 +154,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
-          <version>3.0.0-M7</version>
+          <version>3.0.0</version>
           <configuration>
             <argLine>
               --illegal-access=permit
@@ -238,7 +238,7 @@
         <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>10.0.12</version>
+          <version>10.0.15</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -323,7 +323,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.3.0</version>
         <executions>
           <execution>
             <id>enforce-versions</id>
@@ -381,9 +381,23 @@
           <dependency>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.6.1</version>
+            <version>1.6.2</version>
           </dependency>
         </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>io.spring.javaformat</groupId>
+        <artifactId>spring-javaformat-maven-plugin</artifactId>
+        <version>0.0.38</version>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <inherited>true</inherited>
+            <goals>
+              <goal>validate</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
@@ -688,7 +702,7 @@
       <dependency>
         <groupId>com.fasterxml.woodstox</groupId>
         <artifactId>woodstox-core</artifactId>
-        <version>5.1.0</version>
+        <version>5.4.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.ws.commons.axiom</groupId>
@@ -813,7 +827,7 @@
         <artifactId>postgresql</artifactId>
         <version>42.5.2</version>
       </dependency>
-      <!-- Oracle (Offical provided driver from repo1.maven.org) -->
+      <!-- Oracle (Official provided driver from repo1.maven.org) -->
       <dependency>
         <groupId>com.oracle.database.jdbc</groupId>
         <artifactId>ojdbc8</artifactId>
@@ -849,6 +863,12 @@
         <groupId>com.oracle.database.xml</groupId>
         <artifactId>xdb</artifactId>
         <version>${oracle.version}</version>
+      </dependency>
+      <!-- MSSQL (Official provided driver from repo1.maven.org) -->
+      <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>10.2.2.jre11</version>
       </dependency>
       <!-- Batik -->
       <dependency>
@@ -1108,7 +1128,7 @@
       <dependency>
         <groupId>org.gdal</groupId>
         <artifactId>gdal</artifactId>
-        <version>3.0.0</version>
+        <version>3.6.0</version>
       </dependency>
       <dependency>
         <groupId>org.reflections</groupId>
@@ -1142,7 +1162,7 @@
       <dependency>
         <groupId>org.deegree</groupId>
         <artifactId>deegree-ogcschemas</artifactId>
-        <version>20210817</version>
+        <version>20230513</version>
       </dependency>
       <dependency>
         <groupId>javax.mail</groupId>
@@ -1172,9 +1192,9 @@
         <version>${antlr.version}</version>
       </dependency>
       <dependency>
-        <groupId>${project.groupId}</groupId>
+        <groupId>net.gcardone.junidecode</groupId>
         <artifactId>junidecode</artifactId>
-        <version>0.2</version>
+        <version>0.4.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.auto.service</groupId>
@@ -1256,14 +1276,6 @@
               <excludeRoots>
                 <excludeRoot>target/generated-sources</excludeRoot>
               </excludeRoots>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.1.2</version>
-            <configuration>
-              <configLocation>checkstyle.xml</configLocation>
             </configuration>
           </plugin>
           <plugin>
