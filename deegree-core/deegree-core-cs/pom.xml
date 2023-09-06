@@ -12,7 +12,7 @@
   <parent>
     <groupId>org.deegree</groupId>
     <artifactId>deegree-core</artifactId>
-    <version>3.5.1-SNAPSHOT</version>
+    <version>3.5.3-SNAPSHOT</version>
   </parent>
 
   <build>
@@ -44,8 +44,8 @@
       <artifactId>vecmath</artifactId>
     </dependency>
     <dependency>
-      <groupId>jgridshift</groupId>
-      <artifactId>jgridshift</artifactId>
+      <groupId>it.geosolutions.jgridshift</groupId>
+      <artifactId>jgridshift-core</artifactId>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

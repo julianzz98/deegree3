@@ -8,15 +8,15 @@
   <parent>
     <groupId>org.deegree</groupId>
     <artifactId>deegree</artifactId>
-    <version>3.5.1-SNAPSHOT</version>
+    <version>3.5.3-SNAPSHOT</version>
   </parent>
 
   <build>
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.3.0</version>
           <configuration>
             <descriptors>
               <descriptor>src/assembly/assembly.xml</descriptor>
